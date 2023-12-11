@@ -44,15 +44,11 @@ public class Main {
             }
         }
 
-        // Игрок либо оставляет исходный вариант, либо меняет свой выбор
-        if (rnd.nextBoolean()) {
-            secondChoice = firstChoice;
-        } else {
-            while (secondChoice == -1) {
-                int choice = rnd.nextInt(doorsCount);
-                if (choice != firstChoice && choice != hostChoice) {
-                    secondChoice = choice;
-                }
+        // Игрок меняет свой выбор
+        while (secondChoice == -1) {
+            int choice = rnd.nextInt(doorsCount);
+            if (choice != firstChoice && choice != hostChoice) {
+                secondChoice = choice;
             }
         }
 
